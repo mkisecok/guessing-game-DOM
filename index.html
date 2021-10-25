@@ -27,11 +27,12 @@
 <script>
  
 function myfunction()
-{      
-    let level = parseInt(prompt('At what level do you play (easy=0 or medium=1 or hard=2)','1'));
+{      let name = prompt('What is your name');
+
+       let level = parseInt(prompt('At what level do you play (easy=0 or medium=1 or hard=2)','1'));
         let counter = 0;
 
-        let randomNumber=0;
+        let randomNumber = 0;
 
         let guess= prompt(`Guess a number between 1 - ${level===0 ? 10: level===1 ? 20:30 }`,'10')
     if (level == 0)
@@ -65,6 +66,7 @@ function myfunction()
        
        if(guess)
         console.log(randomNumber);
+
         for(let i = 1; i <= 3; i++)
         {   
            
@@ -75,16 +77,16 @@ function myfunction()
 
             if(counter == 3)
             {
-            alert( `Sorry, you failed to guess the number in three attempts.The number was ${randomNumber}`)
+            alert( `Sorry ${name}, you failed to guess the number in three attempts.The number was ${randomNumber}`)
             break
             }   
-             guess= prompt(`Try Again. ${guess< randomNumber ? 'Your number is samaller than the random number': 'Your number is greater than the random number'}`)
+             guess= prompt(`Try Again ${name}. ${guess < randomNumber ? 'Your number is samaller than the random number': 'Your number is greater than the random number'}`)
            
         }
 
             if(guess == randomNumber)
         {
-            alert(`Success, the number was ${guess}! Attemps: ${counter +1}`)
+            alert(`Success ${name}, the number was ${guess}! Attemps: ${counter +1}`)
             
             return
         }
