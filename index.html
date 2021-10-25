@@ -25,8 +25,8 @@
     
 </body>
 <script>
-    function myfunction()
-    {
+  /*  function myfunction()
+{
         let randomNumber = Math.floor(Math.random()*10) + 1;
         console.log(randomNumber);
 
@@ -56,14 +56,62 @@
             alert(`Success, the number was ${guess}! Attemps: ${counter +1}`)
             
             return
-
         }
-
-        
-
-        }
-    
     }
+}
+*/
+
+function myfunction()
+{      
+    let level = parseInt(prompt('At what level do you play (easy=0 or medium=1 or hard=2)','1'));
+        let counter = 0;
+
+        let randomNumber=0;
+
+       if (level == 0)
+         randomNumber = Math.floor(Math.random()*10) + 1 
+
+        else if (level == 1)
+      randomNumber = Math.abs(Math.floor(Math.random()*10) -20); 
+
+        else if (level == 2)
+
+        randomNumber = Math.abs (Math.floor(Math.random()*10) - 30); 
+         else console.log('else');
+
+         console.log(randomNumber);
+       
+         
+       let guess= prompt(`Guess a number between 1 - ${level===0 ? 10: level===1 ? 20:30 }`,'10')
+        console.log(randomNumber);
+        for(let i = 1; i <= 3; i++)
+        {   
+           
+            if(guess != randomNumber)
+        {     
+           
+            counter = counter + 1; 
+
+            if(counter == 3)
+            {
+            alert( `Sorry, you failed to guess the number in three attempts.The number was ${randomNumber}`)
+            break
+            }   
+             guess= prompt(`Try Again. ${guess< randomNumber ? 'Your number is samaller than the random number': 'Your number is greater than the random number'}`)
+           
+        }
+
+            if(guess == randomNumber)
+        {
+            alert(`Success, the number was ${guess}! Attemps: ${counter +1}`)
+            
+            return
+        }
+    }
+}
+
+
+
        
 </script>
 
