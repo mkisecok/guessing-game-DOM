@@ -20,6 +20,51 @@
         <li>Good luck!</li>
 
     </ul>
+    <button onclick="myfunction()">Guess Number</button>
+    
+    
 </body>
+<script>
+    function myfunction()
+    {
+        let randomNumber = Math.floor(Math.random()*10) + 1;
+        console.log(randomNumber);
+
+        let counter = 0;
+
+        let guess= prompt('Guess a number between 1 - 10:')
+
+        for(let i = 1; i <= 3; i++)
+        {   
+           
+            if(guess != randomNumber)
+        {     
+           
+            counter = counter + 1; 
+
+            if(counter == 3)
+            {
+            alert( `Sorry, you failed to guess the number in three attempts.The number was ${randomNumber}`)
+            break
+            }   
+             guess= prompt('Try again')
+           
+        }
+
+            if(guess == randomNumber)
+        {
+            alert(`Success, the number was ${guess}! Attemps: ${counter +1}`)
+            
+            return
+
+        }
+
+        
+
+        }
+    
+    }
+       
+</script>
 
 </html>
