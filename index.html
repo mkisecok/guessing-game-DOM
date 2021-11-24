@@ -20,6 +20,84 @@
         <li>Good luck!</li>
 
     </ul>
+    <button onclick="myfunction()" style="color: cadetblue; border-radius: 50%; width: 150px; height: 150px; font-size: x-large;">Start...</button>
+    
+    
 </body>
+<script>
+ 
+function myfunction()
+
+{      let name = prompt('What is your name');
+
+       let level = parseInt(prompt('At what level do you play (easy=0 or medium=1 or hard=2)','0'));
+        let counter = 0;
+
+        let randomNumber = 0;
+
+        let guess= prompt(`Guess a number between 1 - ${level===0 ? 10: level===1 ? 20:30 }`)
+    if (level == 0)
+        {
+           randomNumber = Math.floor(Math.random()*10) + 1 ;
+           if(guess > 10)
+           alert('Your guess must be till  10')
+        } 
+        
+
+    else if (level == 1)
+
+        {
+           randomNumber = Math.abs(Math.floor(Math.random()*10) -20); 
+           if(guess > 20)
+           alert('Your guess must be till  20')
+        }
+
+    else if (level == 2)
+
+        {
+            randomNumber = Math.abs (Math.floor(Math.random()*10) - 30); 
+
+            if(guess > 30)
+            alert('Your guess must be till  30')
+        }
+         else console.log('else');
+
+         console.log(randomNumber);
+       
+         
+       
+       
+
+        console.log(randomNumber);
+
+        for(let i = 1; i <= 3; i++)
+        {   
+           
+            if(guess != randomNumber)
+        {     
+           
+            counter = counter + 1; 
+
+            if(counter == 3)
+            {
+            alert( `Sorry ${name}, you failed to guess the number in three attempts.The number was ${randomNumber}`)
+            break
+            }   
+             guess= prompt(`Try Again ${name}. ${guess < randomNumber ? 'Your number is samaller than the correct number': 'Your number is greater than the correct number'}`)
+           
+        }
+
+            if(guess == randomNumber)
+        {
+            alert(`Success ${name}, the number was ${guess}! Attemps: ${counter +1}`)
+            
+            return
+        }
+    }
+}
+
+
+
+</script>
 
 </html>
