@@ -11,4 +11,4 @@
 * If the player fails to guess the number after three attempts, print out that the player was unsuccessful AND what the number was. e.g. "Sorry, you failed to guess the number in three attempts. The number was 0!"
 ![alt text](./images/game-lost.png "Lost Game") 
 
-**See the images for reference**
+
