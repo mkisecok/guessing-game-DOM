@@ -1,5 +1,5 @@
 # The Guessing Game
-##Result-Link:https://mkisecok.github.io/guessing-game-DOM/
+## Result-Link:https://mkisecok.github.io/guessing-game-DOM/
 ### Create a guessing game for players. 
 
 * Randomize a number between 1-10. Do not show the player.
